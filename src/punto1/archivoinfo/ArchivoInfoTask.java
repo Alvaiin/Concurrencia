@@ -38,7 +38,7 @@ public class ArchivoInfoTask extends RecursiveTask<List<ArchivoInfo>> {
 			for (ArchivoInfoTask task : ForkJoinTask.invokeAll(subTareas)){
 				for (ArchivoInfo archivoInfo : task.join()) {
 					listArchivos.add(archivoInfo);
-					peso +=archivoInfo.getPeso();
+					peso += archivoInfo.getPeso();
 				}			
 			}								 
 			
