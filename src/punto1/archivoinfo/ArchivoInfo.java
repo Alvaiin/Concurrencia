@@ -3,54 +3,52 @@ package punto1.archivoinfo;
 public class ArchivoInfo {
 
 	private long peso;
-	
+
 	private String path;
-	
+
 	public ArchivoInfo(String path, long peso) {
 		this.peso = peso;
 		this.path = path;
 	}
-	
+
 	public long getPeso() {
 		return peso;
 	}
-	
+
 	public String getPath() {
 		return path;
 	}
 
 	@Override
 	public String toString() {
-		
-		int i=0;
+
+		int i = 0;
 		String unidad;
-		while(peso>=1024 && i<4) {
-			peso = peso/1024L;
+		while (peso >= 1024 && i < 4) {
+			peso = peso / 1024L;
 			i++;
 		}
-		switch(i) {
+		switch (i) {
 		case 0:
-			unidad="Bytes";
+			unidad = "Bytes";
 			break;
 		case 1:
-			unidad="Kb";
+			unidad = "Kb";
 			break;
 		case 2:
-			unidad="Mb";
+			unidad = "Mb";
 			break;
 		case 3:
-			unidad="Gb";
+			unidad = "Gb";
 			break;
 		case 4:
-			unidad="Tb";
+			unidad = "Tb";
 			break;
 		default:
-			unidad="";
+			unidad = "";
 		}
-		
-		return String.format("%s (%d %s)", this.path,this.peso,unidad);
+
+		return String.format("%s (%d %s)", this.path, this.peso, unidad);
 	}
-	
-	
-	
+
 }
